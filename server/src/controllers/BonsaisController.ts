@@ -2,6 +2,15 @@ import { Request, Response } from 'express'
 import knex from '../database/connection'
 
 class BonsaisController {
+
+  async index(request: Request, response: Response) {
+      const bonsais = await knex('bonsais')
+        .select([
+          'bonsais.*'
+        ])
+      return response.json(bonsais)
+  }
+
   async show(request: Request, response: Response) {
     const { id } = request.params
 
@@ -30,6 +39,20 @@ class BonsaisController {
      })
 
      return response.json({ id })
+  }
+//delete route is not complete 
+  async delete(request: Request, response: Response) {
+      const { id } = request.params
+      const bonsai = await knex('bonsais')
+        .where('id', id)
+        .select('bonsais.id')
+        .first()
+
+      if(bonsai.id !== id) {
+        return response.status(401).json({ error:" Operation not permited"})
+      }
+      await knex('bonsais').where('id', id).delete()
+      return response.status(204).send()     
   }
 }
 
