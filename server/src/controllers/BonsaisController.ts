@@ -44,13 +44,13 @@ class BonsaisController {
   async delete(request: Request, response: Response) {
       const { id } = request.params
 
-      const bonsai = await knex('bonsais')
-        .where('id', id)
-        .select('bonsais.id')
-        .first()
-
       await knex('bonsais').where('id', id).delete()
       return response.status(204).json({ message: "delete Successful"})   
+  }
+
+//update route is not complete
+  async update(request: Request, response: Response) {
+
   }
 }
 
