@@ -40,19 +40,17 @@ class BonsaisController {
 
      return response.json({ id })
   }
-//delete route is not complete 
+//delete route is previously complete
   async delete(request: Request, response: Response) {
       const { id } = request.params
+
       const bonsai = await knex('bonsais')
         .where('id', id)
         .select('bonsais.id')
         .first()
 
-      if(bonsai.id !== id) {
-        return response.status(401).json({ error:" Operation not permited"})
-      }
       await knex('bonsais').where('id', id).delete()
-      return response.status(204).send()     
+      return response.status(204).json({ message: "delete Successful"})   
   }
 }
 
