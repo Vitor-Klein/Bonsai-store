@@ -49,9 +49,9 @@ class BonsaisController {
   }
 
 //update route is not complete
-  async update(request: Request, response: Response) {
+/*  async update(request: Request, response: Response) {
 
-  }
+  }*/
 }
 
 export default BonsaisController
