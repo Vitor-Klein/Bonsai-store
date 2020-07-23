@@ -21,8 +21,8 @@ const Bonsais: React.FC = () => {
 
   const navigation = useNavigation()
 
-  function navigateToDetail(id: number) {
-    navigation.navigate('Detail', { bonsai_id: id })
+  function navigateToDetail(bonsai: Bonsai) {
+    navigation.navigate('Detail', { bonsai })
   }
 
   useEffect(() => {
@@ -62,7 +62,7 @@ const Bonsais: React.FC = () => {
 
                    <TouchableOpacity 
                     style={styles.detailButton} 
-                    onPress={() => navigateToDetail()}
+                    onPress={() => navigateToDetail(bonsai)}
                    >
                        <Text style={styles.detailButtonText}>Ver mais detalhes</Text>
                        <Feather name="arrow-right" size={16} color="#E02041" />
