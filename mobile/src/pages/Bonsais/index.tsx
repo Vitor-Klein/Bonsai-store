@@ -46,18 +46,18 @@ const Bonsais: React.FC = () => {
 
            <FlatList 
                 data={bonsais}
-                style={styles.incidentList}
+                style={styles.bonsaiList}
                 keyExtractor={bonsai => String(bonsai.id)}
                 onEndReachedThreshold={0.2}
                 renderItem={({ item: bonsai }) => (
-                    <View style={styles.incident}>
-                   <Text style={styles.incidentProperty}>Specie:</Text>
-                   <Text style={styles.incidentValue}>{bonsai.specie}</Text>
+                    <View style={styles.bonsai}>
+                   <Text style={styles.bonsaiProperty}>Specie:</Text>
+                   <Text style={styles.bonsaiValue}>{bonsai.specie}</Text>
 
-                   <Text style={styles.incidentProperty}>Idade:</Text>
-                   <Text style={styles.incidentValue}>{bonsai.age}</Text>
+                   <Text style={styles.bonsaiProperty}>Idade:</Text>
+                   <Text style={styles.bonsaiValue}>{bonsai.age}</Text>
 
-                   <Text style={styles.incidentProperty}>Imagem:</Text>
+                   <Text style={styles.bonsaiProperty}>Imagem:</Text>
                   
 
                    <TouchableOpacity 

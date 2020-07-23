@@ -37,24 +37,24 @@ export default StyleSheet.create({
         color: '#737380',
     },
 
-    incidentList: {
+    bonsaiList: {
         marginTop: 32,
     },
 
-    incident: {
+    bonsai: {
         padding: 24,
         borderRadius: 8,
         backgroundColor: '#FFF',
         marginBottom: 16,
     },
 
-    incidentProperty:{
+    bonsaiProperty:{
         fontSize: 14,
         color: '#41414d',
         fontWeight: 'bold',
     },
 
-    incidentValue:{
+    bonsaiValue:{
        marginTop: 8,
        fontSize: 15, 
        marginBottom: 24,
