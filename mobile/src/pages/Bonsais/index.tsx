@@ -37,12 +37,12 @@ const Bonsais: React.FC = () => {
            <View style={styles.header}>
                 
                 <Text style={styles.headerText}>
-                    Total de <Text style={styles.headerTextBold}>{total} casos</Text>
+                    Total de <Text style={styles.headerTextBold}>{total} bonsais</Text>
                 </Text>
            </View>
 
            <Text style={styles.title}>Bem-Vindo!</Text>
-           <Text style={styles.description}>Escolha um dos casos abaixo e salve o dia</Text>
+           <Text style={styles.description}>These are your bonsais vitor:</Text>
 
            <FlatList 
                 data={bonsais}
@@ -65,7 +65,7 @@ const Bonsais: React.FC = () => {
                     onPress={() => navigateToDetail(bonsai)}
                    >
                        <Text style={styles.detailButtonText}>Ver mais detalhes</Text>
-                       <Feather name="arrow-right" size={16} color="#E02041" />
+                       <Feather name="arrow-right" size={16} color="#DC599E" />
                    </TouchableOpacity>
                </View>
             )}
